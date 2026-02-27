@@ -1,0 +1,33 @@
+TASKNEST – DAILY TASK MANAGER WEB APP PROMPT
+
+Create a modern web application called “TaskNest”.
+
+This is a Daily Task Manager web app.
+
+FEATURES REQUIRED:
+
+1.  A dashboard page.
+2.  A form to add new tasks:
+    -   Task Title (required)
+    -   Description
+    -   Due Date
+3.  A task list section that:
+    -   Displays all tasks
+    -   Allows marking tasks as completed
+    -   Allows deleting tasks
+4.  A filter option:
+    -   Show All
+    -   Show Completed
+    -   Show Pending
+
+DESIGN REQUIREMENTS: - Clean and minimal UI - Soft blue and white color
+theme - Mobile responsive - Simple beginner-friendly layout
+
+TECHNICAL REQUIREMENTS: - Use simple frontend structure - Store tasks
+locally (local storage or simple database) - No complex authentication
+required
+
+Add a welcome message: “Welcome to TaskNest – Organize your day, achieve
+your goals.”
+
+Make the UI professional but simple.
