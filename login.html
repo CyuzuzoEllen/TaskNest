@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskNest – Sign In</title>
+    <meta name="description" content="Sign in to TaskNest to manage your daily tasks." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="auth-page">
+
+    <!-- ===== AUTH CONTAINER ===== -->
+    <div class="auth-container" id="auth-container">
+
+        <!-- Decorative background shapes -->
+        <div class="auth-bg-shape auth-bg-shape--1"></div>
+        <div class="auth-bg-shape auth-bg-shape--2"></div>
+        <div class="auth-bg-shape auth-bg-shape--3"></div>
+
+        <!-- Auth Card -->
+        <div class="auth-card" id="auth-card">
+
+            <!-- Brand -->
+            <div class="auth-card__brand">
+                <svg class="auth-card__logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 11l3 3L22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                </svg>
+                <h1 class="auth-card__title">TaskNest</h1>
+                <p class="auth-card__subtitle">Organize your day, achieve your goals.</p>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="auth-tabs" id="auth-tabs">
+                <button class="auth-tab active" data-tab="login" id="tab-login">Sign In</button>
+                <button class="auth-tab" data-tab="signup" id="tab-signup">Sign Up</button>
+                <div class="auth-tab__indicator" id="tab-indicator"></div>
+            </div>
+
+            <!-- Message -->
+            <div class="auth-message" id="auth-message"></div>
+
+            <!-- Login Form -->
+            <form class="auth-form" id="login-form">
+                <div class="auth-form__group">
+                    <label class="auth-form__label" for="login-username">Username</label>
+                    <div class="auth-form__input-wrapper">
+                        <svg class="auth-form__input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                        <input class="auth-form__input" type="text" id="login-username"
+                            placeholder="Enter your username" autocomplete="username" required />
+                    </div>
+                </div>
+                <div class="auth-form__group">
+                    <label class="auth-form__label" for="login-password">Password</label>
+                    <div class="auth-form__input-wrapper">
+                        <svg class="auth-form__input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                        <input class="auth-form__input" type="password" id="login-password"
+                            placeholder="Enter your password" autocomplete="current-password" required />
+                    </div>
+                </div>
+                <button class="btn btn--primary auth-form__submit" type="submit" id="login-btn">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                        <polyline points="10 17 15 12 10 7" />
+                        <line x1="15" y1="12" x2="3" y2="12" />
+                    </svg>
+                    Sign In
+                </button>
+            </form>
+
+            <!-- Signup Form -->
+            <form class="auth-form auth-form--hidden" id="signup-form">
+                <div class="auth-form__group">
+                    <label class="auth-form__label" for="signup-username">Username</label>
+                    <div class="auth-form__input-wrapper">
+                        <svg class="auth-form__input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                        <input class="auth-form__input" type="text" id="signup-username" placeholder="Choose a username"
+                            autocomplete="username" required />
+                    </div>
+                </div>
+                <div class="auth-form__group">
+                    <label class="auth-form__label" for="signup-password">Password</label>
+                    <div class="auth-form__input-wrapper">
+                        <svg class="auth-form__input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                        <input class="auth-form__input" type="password" id="signup-password"
+                            placeholder="Create a password (min 6 chars)" autocomplete="new-password" required />
+                    </div>
+                </div>
+                <div class="auth-form__group">
+                    <label class="auth-form__label" for="signup-confirm">Confirm Password</label>
+                    <div class="auth-form__input-wrapper">
+                        <svg class="auth-form__input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        <input class="auth-form__input" type="password" id="signup-confirm"
+                            placeholder="Re-enter your password" autocomplete="new-password" required />
+                    </div>
+                </div>
+                <button class="btn btn--primary auth-form__submit" type="submit" id="signup-btn">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="8.5" cy="7" r="4" />
+                        <line x1="20" y1="8" x2="20" y2="14" />
+                        <line x1="23" y1="11" x2="17" y2="11" />
+                    </svg>
+                    Create Account
+                </button>
+            </form>
+
+        </div>
+
+        <!-- Footer -->
+        <p class="auth-footer">&copy; 2026 TaskNest. Stay organized, stay productive.</p>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script>
+        (function () {
+            'use strict';
+
+            // If already logged in, go to app
+            if (Auth.getCurrentUser()) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // DOM
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const tabLogin = document.getElementById('tab-login');
+            const tabSignup = document.getElementById('tab-signup');
+            const messageEl = document.getElementById('auth-message');
+
+            // Tab switching
+            function switchTab(tab) {
+                if (tab === 'login') {
+                    loginForm.classList.remove('auth-form--hidden');
+                    signupForm.classList.add('auth-form--hidden');
+                    tabLogin.classList.add('active');
+                    tabSignup.classList.remove('active');
+                } else {
+                    signupForm.classList.remove('auth-form--hidden');
+                    loginForm.classList.add('auth-form--hidden');
+                    tabSignup.classList.add('active');
+                    tabLogin.classList.remove('active');
+                }
+                hideMessage();
+            }
+
+            tabLogin.addEventListener('click', () => switchTab('login'));
+            tabSignup.addEventListener('click', () => switchTab('signup'));
+
+            // Messages
+            function showMessage(text, type) {
+                messageEl.textContent = text;
+                messageEl.className = 'auth-message auth-message--visible auth-message--' + type;
+            }
+
+            function hideMessage() {
+                messageEl.className = 'auth-message';
+                messageEl.textContent = '';
+            }
+
+            // Disable/enable button during request
+            function setLoading(btn, loading) {
+                btn.disabled = loading;
+                if (loading) {
+                    btn.dataset.originalText = btn.textContent;
+                    btn.innerHTML = '<span class="auth-spinner"></span> Please wait…';
+                } else {
+                    btn.innerHTML = btn.dataset.originalText || 'Submit';
+                }
+            }
+
+            // Login submit
+            loginForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const username = document.getElementById('login-username').value;
+                const password = document.getElementById('login-password').value;
+                const btn = document.getElementById('login-btn');
+
+                setLoading(btn, true);
+                const result = await Auth.login(username, password);
+                setLoading(btn, false);
+
+                if (result.success) {
+                    showMessage(result.message, 'success');
+                    setTimeout(() => { window.location.href = 'index.html'; }, 600);
+                } else {
+                    showMessage(result.message, 'error');
+                }
+            });
+
+            // Signup submit
+            signupForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const username = document.getElementById('signup-username').value;
+                const password = document.getElementById('signup-password').value;
+                const confirm = document.getElementById('signup-confirm').value;
+                const btn = document.getElementById('signup-btn');
+
+                if (password !== confirm) {
+                    showMessage('Passwords do not match.', 'error');
+                    return;
+                }
+
+                setLoading(btn, true);
+                const result = await Auth.signup(username, password);
+                setLoading(btn, false);
+
+                if (result.success) {
+                    showMessage(result.message, 'success');
+                    setTimeout(() => { window.location.href = 'index.html'; }, 600);
+                } else {
+                    showMessage(result.message, 'error');
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
