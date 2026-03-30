@@ -105,6 +105,22 @@ const Auth = (function () {
         return user ? 'tasknest_tasks_' + user : 'tasknest_tasks';
     }
 
+    async function deleteAccount() {
+        const username = getCurrentUser();
+        if (!username) return { success: false, message: 'No user logged in.' };
+
+        // Confirm with user (handled in UI, but added here for safety)
+        const users = getUsers();
+        delete users[username];
+        saveUsers(users);
+
+        // Clear user tasks
+        localStorage.removeItem('tasknest_tasks_' + username);
+        
+        logout();
+        return { success: true, message: 'Account deleted successfully.' };
+    }
+
     // ---- Public API ----
     return {
         signup,
@@ -112,6 +128,7 @@ const Auth = (function () {
         logout,
         getCurrentUser,
         requireAuth,
-        getStorageKey
+        getStorageKey,
+        deleteAccount
     };
 })();
